@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hus</title>
+
+</head>
+    <body>
+    <canvas id="myCanvas" width="600" height="600" style="border: 1px solid #d3d3d3;"></canvas>
+        <script type="text/javascript">
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            document.getElementById("myCanvas").style.cursor = "grab";
+
+            //Background
+            ctx.fillStyle = "rgb(120,120,120)";
+            ctx.fillRect(0,0,600,600)
+
+            //Lines
+            ctx.beginPath();
+            ctx.moveTo(0,100);
+            ctx.lineTo(200,150);
+            ctx.lineTo(400,0);
+            ctx.lineTo(600,100);
+            ctx.stroke();
+
+            //Roof
+            ctx.beginPath();
+            ctx.moveTo(50,200);
+            ctx.lineTo(80,160);
+            ctx.lineTo(520,160);
+            ctx.lineTo(550,200);
+            ctx.lineTo(50,200);
+            ctx.fillStyle = "black"
+            ctx.fill();
+
+            //House
+            ctx.beginPath();
+            ctx.moveTo(80,200);
+            ctx.lineTo(80,600);
+            ctx.lineTo(520,600);
+            ctx.lineTo(520,200);
+            ctx.lineTo(80,200);
+            ctx.fillStyle = "green";
+            ctx.fill();
+
+            function createWindow(x,y) {
+                ctx.fillStyle = "yellow";
+                ctx.fillRect(x,y,100,100);
+            }
+
+            createWindow(150,220);
+            createWindow(350,220);
+            createWindow(150,350);
+            createWindow(350,350);
+
+            //door
+            ctx.fillStyle = "grey";
+            ctx.fillRect(260,480,80,120);
+
+            //sun
+            ctx.beginPath();
+            ctx.arc(170,80,25,0,2*Math.PI,false);
+            ctx.fillStyle = "yellow";
+            ctx.fill();
+
+            //Text
+            ctx.font = "24px Arial";
+            ctx.fillStyle= "black";
+            ctx.fillText("Hello world!!",90,550);
+        </script>
+    </body>
+</html>
+

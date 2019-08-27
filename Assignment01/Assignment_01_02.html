@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <body>
+    <canvas id="myCanvas" width="600" height="600" style="border: 1px solid #d3d3d3;"></canvas>
+        <script type="text/javascript">
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            document.getElementById("myCanvas").style.cursor = "grab";
+
+            var polling = false;
+            var canvas = document.getElementById("myCanvas");
+
+            function drawStrikk(x,y){
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+
+                ctx.fillStyle = "yellow";
+                ctx.fillRect(0,0,600,600)
+
+                ctx.fillStyle = "red";
+                ctx.fillRect(150,150,300,300);
+
+                ctx.beginPath();
+                ctx.beginPath();
+                ctx.moveTo(150,300);
+                ctx.lineTo(x,y);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(450,300);
+                ctx.lineTo(x,y);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(x,y,5,0,2*Math.PI,false);
+                ctx.fillStyle = "black";
+                ctx.fill();
+                ctx.stroke();
+            }
+            function circleIntersect(x,y){
+                if(Math.abs((x-300)^2 + (y-300)^2) <= 5){
+                    console.error((x-300)^2 + (y-300)^2);
+                    return true;
+                }
+                return false;
+            }
+            drawStrikk(300,300)
+            canvas.addEventListener("mousedown",function (e) {
+                var x = e.clientX - canvas.offsetLeft;
+                var y = e.clientY - canvas.offsetTop;
+                if(circleIntersect(x,y)){
+                    polling= true;
+                    console.error("polling")
+                }
+            },false);
+            canvas.addEventListener("mousemove",function (e){
+                if(polling){
+                    var x = e.clientX - canvas.offsetLeft;
+                    var y = e.clientY - canvas.offsetTop;
+                    //console.error(x + " " + y);
+                    drawStrikk(x,y);
+                }else{
+                    var x = e.clientX - canvas.offsetLeft;
+                    var y = e.clientY - canvas.offsetTop;
+                    if(circleIntersect(x,y)){
+                        canvas.style.cursor="pointer";
+                    }else{
+                        canvas.style.cursor = "auto";
+                    }
+                }
+            },false);
+            canvas.addEventListener("mouseup",function (e){
+                polling = false;
+                console.error("notpolling");
+                drawStrikk(300,300);
+                canvas.style.cursor = "auto";
+            },false);
+        </script>
+    </body>
+</html>
