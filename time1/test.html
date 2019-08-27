@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<canvas id="myCanvas" width="600" height="600" style="border: 1px solid #d3d3d3;"></canvas>
+<script type="text/javascript">
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    var numberNodes = 4;
+    var circleNodes = [];
+    var matrix = Array(600,600).fill(0);
+
+    function CircleNode(v,r){
+        this.x = r*Math.sin(v);
+        this.y = r*Math.cos(v);
+    }
+
+    for(var i = 0; i<2*Math.PI; i+=Math.PI/(numberNodes)){
+        circleNodes.push(new CircleNode(i,2));
+    }
+    console.error(circleNodes.length)
+
+    ctx.beginPath();
+    ctx.moveTo(300,300);
+    for(var i = 0; i <circleNodes.length; i++){
+        var s = circleNodes[i];
+        ctx.lineTo(s.x,s.y);
+        console.error(s.x + s.y + "\n");
+    }
+    ctx.fillRect(0,0,600,600)
+    ctx.stroke();
+</script>
+</body>
+
+</html>
