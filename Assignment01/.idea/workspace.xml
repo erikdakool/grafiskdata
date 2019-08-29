@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7452ab6-f5f9-408c-91c4-8c5b50cec369" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment01.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment01_01.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment01_01.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment_01_01.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +41,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Assignment_01_02.html">
-    <configuration name="Assignment01_01.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Assignment01/Assignment01_01.html" useBuiltInWebServerPort="true">
+  <component name="RunManager">
+    <configuration name="Assignment_01_01.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Assignment01/Assignment_01_01.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="Assignment_01_02.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Assignment01/Assignment_01_02.html" useBuiltInWebServerPort="true">
@@ -51,8 +50,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.Assignment_01_01.html" />
         <item itemvalue="JavaScript Debug.Assignment_01_02.html" />
-        <item itemvalue="JavaScript Debug.Assignment01_01.html" />
       </list>
     </recent_temporary>
   </component>
@@ -68,6 +67,7 @@
       <updated>1566907719865</updated>
       <workItem from="1566907721270" duration="1816000" />
       <workItem from="1566925262128" duration="4940000" />
+      <workItem from="1567058182544" duration="4256000" />
     </task>
     <servers />
   </component>
@@ -79,7 +79,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
