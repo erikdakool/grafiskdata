@@ -10,7 +10,7 @@
 <script type="text/javascript">
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
-    var numberNodes = 4;
+    var numberNodes = 72    ;
     var circleNodes = [];
     var matrix = Array(600,600).fill(0);
 
@@ -19,20 +19,66 @@
         this.y = r*Math.cos(v);
     }
 
-    for(var i = 0; i<2*Math.PI; i+=Math.PI/(numberNodes)){
-        circleNodes.push(new CircleNode(i,2));
+    for(var i = 0; i<2*Math.PI; i+=Math.PI/(numberNodes)*2){
+        circleNodes.push(new CircleNode(i,300));
+        console.error(i/Math.PI * 180 + "\n");
     }
     console.error(circleNodes.length)
 
     ctx.beginPath();
-    ctx.moveTo(300,300);
+    ctx.moveTo(circleNodes[0].x+300,circleNodes[0].y+300)
     for(var i = 0; i <circleNodes.length; i++){
         var s = circleNodes[i];
-        ctx.lineTo(s.x,s.y);
-        console.error(s.x + s.y + "\n");
+        ctx.lineTo(s.x+300,s.y+300);
+        console.error(s.x + "\n")
     }
-    ctx.fillRect(0,0,600,600)
+    ctx.lineTo(circleNodes[0].x+300,circleNodes[0].y+300)
     ctx.stroke();
+    //ctx.fillRect(0,0,600,600)
+
+
+    /*var drawing = true;
+    var k = 2;
+    var n = 1;
+    while(drawing){
+        if(k > circleNodes.length){
+            drawing = false;
+            break;
+        }
+        for(var i = 0; i<circleNodes.length; i++){
+            var nOff = 0;
+            var kOff = 0;
+            if(n + i > circleNodes.length){
+                nOff = circleNodes.length - (k+i)
+            }else{
+                nOff = k + i -1;
+            }
+
+            if(k+i > circleNodes.length){
+                nOff = circleNodes.length - (n+i);
+            }else{
+                nOff = n+i-1;
+            }
+
+            ctx.beginPath();
+            ctx.moveTo(circleNodes[nOff].x+300,circleNodes[nOff].y+300)
+            ctx.lineTo(circleNodes[kOff].x+300,circleNodes[kOff].y+300)
+            ctx.stroke();
+        }
+        n = n+1;
+        k = n*2;*/
+
+        var n = 1;
+        var drawing = true;
+        for(var i = 0; i<circleNodes.length; i++){
+            var k = n*2;
+            if(k>circleNodes.length) k = circleNodes.length-k;
+            ctx.beginPath();
+            ctx.moveTo(circleNodes[n-1].x+300, circleNodes[n-1].y+300);
+            ctx.lineTo(circleNodes[k-1].x+300, circleNodes[k-1].y+300);
+            ctx.stroke();
+            n +=1;
+        }
 </script>
 </body>
 

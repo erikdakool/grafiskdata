@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="600" height="600" style="border: 1px solid #d3d3d3;"></canvas>
+<script type="text/javascript">
+    var doc = document.getElementById("myCanvas");
+    var ctx = doc.getContext("2d");
+
+    function Point(x,y){
+        this.x = x;
+        this.y = y;
+    }
+
+    function Square(x0,x1,y0,y1){
+        this.a = x0;
+        this.b = x1;
+        this.c = y0;
+        this.d = y1;
+    }
+
+    const a = new Point(0,0);
+    const b = new Point(500,0);
+    const c = new Point(500,500);
+    const d = new Point(0,500);
+    var square1 = new Square(a,b,c,d);
+
+    function drawSquare(square){
+        ctx.beginPath();
+        ctx.moveTo(square.a.x,square.a.y);
+        ctx.lineTo(square.b.x,square.b.y);
+        ctx.lineTo(square.c.x,square.c.y);
+        ctx.lineTo(square.d.x,square.d.y);
+        ctx.lineTo(square.a.x,square.a.y);
+        ctx.stroke();
+    }
+
+    drawSquare(square1);
+    console.error(square1);
+    function findNewSquare(oldSquare){
+        const p = 0.1;
+        var x = (1-p)*oldSquare.a.x + p*oldSquare.b.x;
+        var y = (1-p)*oldSquare.a.y + p*oldSquare.b.y;
+        const a = new Point(x,y);
+
+        x = (1-p)*oldSquare.b.x + p*oldSquare.c.x;
+        y = (1-p)*oldSquare.b.y + p*oldSquare.c.y;
+        const b = new Point(x,y);
+
+        x = (1-p)*oldSquare.c.x + p*oldSquare.d.x;
+        y = (1-p)*oldSquare.c.y + p*oldSquare.d.y;
+        const c= new Point(x,y);
+
+        x = (1-p)*oldSquare.d.x + p*oldSquare.a.x;
+        y = (1-p)*oldSquare.d.y + p*oldSquare.a.y;
+        const d = new Point(x,y);
+
+        const nsquare = new Square(a,b,c,d);
+        drawSquare(nsquare)
+        console.error(nsquare);
+        return nsquare;
+    }
+
+    for(var i = 0; i < 40; i++){
+        square1 = findNewSquare(square1);
+    }
+</script>
+
+x = (1-p)xo + p*x1
+y = (1-p)y0 + p*y1
+
+0 < p < 1
+
+</body>
+</html>
