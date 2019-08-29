@@ -6,6 +6,7 @@
 </head>
 <body>
 <canvas id="myCanvas" width="600" height="600" style="border: 1px solid #d3d3d3;"></canvas>
+<canvas id="myCanvas2" width="600" height="600" style="border: 1px solid #d3d3d3;"></canvas>
 <script type="text/javascript">
     var doc = document.getElementById("myCanvas");
     var ctx = doc.getContext("2d");
@@ -22,23 +23,54 @@
         this.d = y1;
     }
 
-    const a = new Point(0,0);
-    const b = new Point(500,0);
-    const c = new Point(500,500);
-    const d = new Point(0,500);
-    var square1 = new Square(a,b,c,d);
+    function getFirstSquare(width,height) {
+        const a = new Point(0,0);
+        const b = new Point(width,0);
+        const c = new Point(width,height);
+        const d = new Point(0,height);
+        return new Square(a,b,c,d);
+    }
 
-    function drawSquare(square){
+    function drawSquare(square,xoff,yoff){
         ctx.beginPath();
-        ctx.moveTo(square.a.x,square.a.y);
-        ctx.lineTo(square.b.x,square.b.y);
-        ctx.lineTo(square.c.x,square.c.y);
-        ctx.lineTo(square.d.x,square.d.y);
-        ctx.lineTo(square.a.x,square.a.y);
+        ctx.moveTo(square.a.x+xoff,square.a.y+yoff);
+        ctx.lineTo(square.b.x+xoff,square.b.y+yoff);
+        ctx.lineTo(square.c.x+xoff,square.c.y+yoff);
+        ctx.lineTo(square.d.x+xoff,square.d.y+yoff);
+        ctx.lineTo(square.a.x+xoff,square.a.y+yoff);
         ctx.stroke();
     }
 
-    drawSquare(square1);
+    function mirrorX(square,width,height){
+        const a = mirrorXPoint(square.a,width,height);
+        const b = mirrorXPoint(square.b,width,height);
+        const c = mirrorXPoint(square.c,width,height);
+        const d = mirrorXPoint(square.d,width,height);
+        return new Square(a,b,c,d);
+    }
+
+    function mirrorXPoint(point,width,height){
+        var x = width-point.x;
+        var y = point.y;
+        return new Point(x,y);
+    }
+
+    function mirrorY(square,width,height){
+        const a = mirrorYPoint(square.a,width,height);
+        const b = mirrorYPoint(square.b,width,height);
+        const c = mirrorYPoint(square.c,width,height);
+        const d = mirrorYPoint(square.d,width,height);
+        return new Square(a,b,c,d);
+    }
+
+    function mirrorYPoint(point,width,height){
+        var x = width-point.x;
+        var y = height-point.y;
+        return new Point(x,y);
+    }
+
+    var square1 = getFirstSquare(600,600);
+    drawSquare(square1,0,0);
     console.error(square1);
     function findNewSquare(oldSquare){
         const p = 0.1;
@@ -59,13 +91,49 @@
         const d = new Point(x,y);
 
         const nsquare = new Square(a,b,c,d);
-        drawSquare(nsquare)
-        console.error(nsquare);
         return nsquare;
     }
 
     for(var i = 0; i < 40; i++){
         square1 = findNewSquare(square1);
+        drawSquare(mirrorX(square1,600,600),0,0);
+    }
+
+    doc = document.getElementById("myCanvas2");
+    ctx = doc.getContext("2d");
+
+    var xt = 4;
+    var yt = 4;
+    for(var x = 0; x < xt; x++){
+        for(var y = 0; y < yt; y++) {
+            square1 = getFirstSquare(600/xt,600/yt);
+            for(var i = 0; i < 30; i++){
+                if(x%2==0){
+                    if(y%2==0){
+                        drawSquare(square1,600/xt * x, 600/yt*y)
+                    }else{
+                        const xsquare = mirrorX(square1,150,150);
+                        drawSquare(xsquare,600/xt * x, 600/yt*y);
+                    }
+                }else{
+                    if(y%2==0){
+                        const xsquare = mirrorX(square1,150,150);
+                        drawSquare(xsquare,600/xt * x, 600/yt*y);
+                    }else{
+                        drawSquare(square1,600/xt * x, 600/yt*y)
+                    }
+                }
+
+/*                if(true){
+                    const xsquare = mirrorX(square1,150,150);
+                    drawSquare(square1,600/xt * x, 600/yt*y);
+                }else {
+                    drawSquare(square1,600/xt * x, 600/yt*y);
+                    console.error(x + " " + y + " " + i)
+                }*/
+                square1 = findNewSquare(square1);
+            }
+        }
     }
 </script>
 
