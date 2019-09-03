@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7452ab6-f5f9-408c-91c4-8c5b50cec369" name="Default Changelist" comment="" />
+    <list default="true" id="d7452ab6-f5f9-408c-91c4-8c5b50cec369" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../time1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_01_02.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment_01_02.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../time1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../time1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../time1/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../time1/test.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +30,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../time1" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -38,7 +44,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.Assignment_01_02.html">
     <configuration name="Assignment_01_01.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Assignment01/Assignment_01_01.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -47,8 +53,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.Assignment_01_01.html" />
         <item itemvalue="JavaScript Debug.Assignment_01_02.html" />
+        <item itemvalue="JavaScript Debug.Assignment_01_01.html" />
       </list>
     </recent_temporary>
   </component>
@@ -64,7 +70,10 @@
       <updated>1566907719865</updated>
       <workItem from="1566907721270" duration="1816000" />
       <workItem from="1566925262128" duration="4940000" />
-      <workItem from="1567058182544" duration="4260000" />
+      <workItem from="1567058182544" duration="5226000" />
+      <workItem from="1567172627313" duration="18000" />
+      <workItem from="1567505759328" duration="8000" />
+      <workItem from="1567508562349" duration="1099000" />
     </task>
     <servers />
   </component>
