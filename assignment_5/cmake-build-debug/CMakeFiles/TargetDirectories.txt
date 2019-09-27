@@ -1,0 +1,3 @@
+/home/erik/grafiskdata/assignment_5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/erik/grafiskdata/assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir
+/home/erik/grafiskdata/assignment_5/cmake-build-debug/CMakeFiles/edit_cache.dir

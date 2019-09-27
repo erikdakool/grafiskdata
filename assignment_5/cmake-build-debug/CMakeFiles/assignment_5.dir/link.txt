@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/assignment_5.dir/main.cpp.o CMakeFiles/assignment_5.dir/GameObject.cpp.o  -o assignment_5 -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system 
