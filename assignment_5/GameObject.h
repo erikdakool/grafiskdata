@@ -17,7 +17,7 @@ public:
     GameObject();
     ~GameObject();
 
-    void Roatate(float r);
+    void Rotate(float r);
     void Translate(float x, float y);
     void Scale(float x, float y);
 

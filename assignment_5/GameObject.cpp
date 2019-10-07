@@ -20,7 +20,8 @@ void GameObject::addPoint(float x, float y) {
     this->points.push_back(tMatrix);
 }
 
-void GameObject::Roatate(float r) {
+void GameObject::Rotate(float r) {
+    Translate(-500,-600);
     Matrix<float> tMatrix ={
             {cos(r), -sin(r), 0},
             {sin(r), cos(r), 0},
@@ -29,6 +30,7 @@ void GameObject::Roatate(float r) {
     for (int i = 0; i < points.size(); ++i) {
         points[i] = tMatrix*points[i];
     }
+    Translate(500,600);
 }
 
 void GameObject::Translate(float x, float y) {
@@ -43,6 +45,7 @@ void GameObject::Translate(float x, float y) {
 }
 
 void GameObject::Scale(float x, float y) {
+    Translate(-500,-600);
     Matrix<float> tMatrix ={
             {x, 0, 0},
             {0, y, 0},
@@ -51,6 +54,7 @@ void GameObject::Scale(float x, float y) {
     for (int i = 0; i < points.size(); ++i) {
         points[i] = tMatrix*points[i];
     }
+    Translate(500,600);
 }
 
 void GameObject::Draw(sf::RenderWindow& window) {

@@ -47,4 +47,6 @@ GameObject.h
 /home/erik/grafiskdata/assignment_5/GameObject.h
 iostream
 -
+math.h
+-
 

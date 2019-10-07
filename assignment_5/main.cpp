@@ -2,49 +2,73 @@
 #include "Matrix.h"
 #include "GameObject.h"
 #include <iostream>
-
+#include <math.h>
 using namespace std;
+
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
+    enum State{Polygon,Scale,Translate,Rotate};
+    State state = Polygon;
+    sf::Vector2i mouseLast(-1,-1);
+
+    sf::RenderWindow window(sf::VideoMode(1000, 1000), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
     auto gameObject = new GameObject();
-    gameObject->addPoint(1,1);
-    gameObject->addPoint(1,10);
-    gameObject->addPoint(10,1);
+    sf::Font font;
+    if (!font.loadFromFile("arial.ttf")){}
+    sf::Texture background;
+    background.loadFromFile("background.png");
+    sf::Sprite menuBack;
+    menuBack.setPosition(0,0);
+    menuBack.setTexture(background);
+    menuBack.setColor(sf::Color(128,128,128));
 
-    gameObject->Scale(10,10);
-    gameObject->Translate(400,300);
+    sf::Text polygon;
+    polygon.setFont( font );
+    polygon.setStyle( sf::Text::Bold );
+    polygon.setString( "Create new" );
+    polygon.setFillColor( sf::Color::White );
+    polygon.setCharacterSize( 32 );
+    polygon.setPosition( 0.f,75.0f );
 
-    auto gameObject2 = new GameObject();
-    gameObject2->addPoint(1,1);
-    gameObject2->addPoint(1,10);
-    gameObject2->addPoint(10,1);
+    sf::Text scale;
+    scale.setFont( font );
+    scale.setStyle( sf::Text::Bold );
+    scale.setString( "Scale" );
+    scale.setFillColor( sf::Color::White );
+    scale.setCharacterSize( 32 );
+    scale.setPosition( 400.f,75.0f );
 
-    gameObject2->Roatate((90*3.14)/180);
-    gameObject2->Scale(10,10);
-    gameObject2->Translate(300,300);
+    sf::Text translate;
+    translate.setFont( font );
+    translate.setStyle( sf::Text::Bold );
+    translate.setString( "Translate" );
+    translate.setFillColor( sf::Color::White );
+    translate.setCharacterSize( 32 );
+    translate.setPosition( 200.f,75.0f );
 
-    auto gameObject3 = new GameObject();
-    gameObject3->addPoint(1,1);
-    gameObject3->addPoint(1,10);
-    gameObject3->addPoint(10,1);
+    sf::Text rotate;
+    rotate.setFont( font );
+    rotate.setStyle( sf::Text::Bold );
+    rotate.setString( "Rotate" );
+    rotate.setFillColor( sf::Color::White );
+    rotate.setCharacterSize( 32 );
+    rotate.setPosition( 600.f,75.0f );
 
-    gameObject3->Roatate((270*3.14)/180);
-    gameObject3->Scale(10,10);
-    gameObject3->Translate(400,200);
 
-    auto gameObject4 = new GameObject();
-    gameObject4->addPoint(1,1);
-    gameObject4->addPoint(1,10);
-    gameObject4->addPoint(10,1);
+    sf::Text info;
+    info.setFont( font );
+    info.setStyle( sf::Text::Bold );
+    info.setString( "::Polygon" );
+    info.setFillColor( sf::Color::White );
+    info.setCharacterSize( 32 );
+    info.setPosition( 800.f,75.0f );
 
-    gameObject4->Roatate((180*3.14)/180);
-    gameObject4->Scale(10,10);
-    gameObject4->Translate(300,200);
-
+    gameObject->addPoint(300,300);
+    gameObject->addPoint(600,300);
+    gameObject->addPoint(800,900);
 
     while (window.isOpen())
     {
@@ -54,12 +78,69 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+            auto pos = sf::Mouse::getPosition(window);
+
+            //paintable click
+            if(pos.y > 200){
+                if(state == Polygon){
+                    gameObject->addPoint((float)pos.x,(float)pos.y);
+                }else if(mouseLast.x !=-1 && mouseLast.y != -1){
+                    float dx;
+                    float dy;
+                    float dr;
+                    switch (state){
+                        case Rotate:
+                            dr = sqrtf((pos.x-mouseLast.x)^2 + (pos.y-mouseLast.y^2)) / sqrt((pos.x-600)^2 + (pos.y-500)^2);
+                            std::cout << dr << endl;
+                            gameObject->Rotate(atan(dr));
+                            break;
+                        case Translate:
+                            dx = (float)pos.x-mouseLast.x ;
+                            dy = (float)pos.y- mouseLast.y;
+                            gameObject->Translate(dx,dy);
+                            break;
+                        case Scale:
+                            dx = (float)pos.x/mouseLast.x;
+                            dy = (float)pos.y/mouseLast.y;
+                            cout << dx << " " << pos.x <<  " " <<mouseLast.x << endl;
+                            gameObject->Scale(dx,dy);
+                            break;
+                    }
+                }
+                //menu click
+            }else if(pos.y < 200 && pos.x < 800){
+                if(pos.x > 600){
+                    state = Rotate;
+                    info.setString( "::Rotate" );
+                }else if(pos.x > 400){
+                    state = Scale;
+                    info.setString( "::Scale" );
+                }else if(pos.x > 200){
+                    state = Translate;
+                    info.setString( "::Translate" );
+                }else{
+                    gameObject = new GameObject();
+                    info.setString( "::Polygon" );
+                    state = Polygon;
+                }
+            }
+            mouseLast.x = pos.x;
+            mouseLast.y = pos.y;
+        } else{
+            mouseLast.x = -1;
+            mouseLast.y = -1;
+        }
+
 
         window.clear();
         gameObject->Draw(window);
-        gameObject2->Draw(window);
-        gameObject3->Draw(window);
-        gameObject4->Draw(window);
+        window.draw(menuBack);
+        window.draw(polygon);
+        window.draw(scale);
+        window.draw(translate);
+        window.draw(rotate);
+        window.draw(info);
         window.display();
     };
     return 0;
