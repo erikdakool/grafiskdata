@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df6a4fda-a78d-4ac8-ba00-d3db21a83bb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment01/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment01/Assignment_01_02.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment01/Assignment_01_02.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment_2_1.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,17 +43,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.test.html">
-    <configuration name="Assignment_2_3.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/time1/Assignment_2_3.html" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.Assignment_2_3.html">
+    <configuration name="Assignment_2_1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/time1/Assignment_2_1.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/time1/test.html" useBuiltInWebServerPort="true">
+    <configuration name="Assignment_2_3.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/time1/Assignment_2_3.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.test.html" />
         <item itemvalue="JavaScript Debug.Assignment_2_3.html" />
+        <item itemvalue="JavaScript Debug.Assignment_2_1.html" />
       </list>
     </recent_temporary>
   </component>
@@ -71,7 +69,8 @@
       <updated>1566900436053</updated>
       <workItem from="1566900438691" duration="6616000" />
       <workItem from="1567076864982" duration="4432000" />
-      <workItem from="1567505768568" duration="1990000" />
+      <workItem from="1567505768568" duration="2066000" />
+      <workItem from="1567671445351" duration="962000" />
     </task>
     <servers />
   </component>
