@@ -1,9 +1,3 @@
-/*
- * Matrix.h
- *
- *  Created on: 29 ago 2017
- *      Author: andrearch
- */
 #ifndef MATRIX_H_
 #define MATRIX_H_
 

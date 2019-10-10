@@ -88,24 +88,23 @@ int main()
                 }else if(mouseLast.x !=-1 && mouseLast.y != -1){
                     float dx;
                     float dy;
-                    float dr;
-                    switch (state){
-                        case Rotate:
-                            dr = sqrtf((pos.x-mouseLast.x)^2 + (pos.y-mouseLast.y^2)) / sqrt((pos.x-600)^2 + (pos.y-500)^2);
-                            std::cout << dr << endl;
-                            gameObject->Rotate(atan(dr));
-                            break;
-                        case Translate:
-                            dx = (float)pos.x-mouseLast.x ;
-                            dy = (float)pos.y- mouseLast.y;
-                            gameObject->Translate(dx,dy);
-                            break;
-                        case Scale:
-                            dx = (float)pos.x/mouseLast.x;
-                            dy = (float)pos.y/mouseLast.y;
-                            cout << dx << " " << pos.x <<  " " <<mouseLast.x << endl;
-                            gameObject->Scale(dx,dy);
-                            break;
+                    if(state == Rotate) {
+                        float dr;
+                        float a = sqrtf((mouseLast.x-600)^2 + (mouseLast.y-500)^2);
+                        float b = sqrt((pos.x-600)^2 + (pos.y-500)^2);
+
+                        dr = acos(a/b);
+                        std::cout << dr << " " << a << " " << b<< endl;
+                        gameObject->Rotate(atan(dr));
+                    }else if (state == Translate){
+                        dx = (float)pos.x-mouseLast.x ;
+                        dy = (float)pos.y- mouseLast.y;
+                        gameObject->Translate(dx,dy);
+                    }else if(state == Scale){
+                        dx = (float)pos.x/mouseLast.x;
+                        dy = (float)pos.y/mouseLast.y;
+                        cout << dx << " " << pos.x <<  " " <<mouseLast.x << endl;
+                        gameObject->Scale(dx,dy);
                     }
                 }
                 //menu click

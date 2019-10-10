@@ -157,8 +157,6 @@ std::istream& operator>>(std::istream &is, Matrix<TE>& x)
 	
 }
 
-
-// CLASS METHODS
 template <class T>
 Matrix<T>& Matrix<T>::operator=(const std::vector<std::vector<T>> &m)
 {
