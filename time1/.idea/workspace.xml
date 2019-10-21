@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df6a4fda-a78d-4ac8-ba00-d3db21a83bb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Assignment01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment01/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment_08/.idea/Assignment_08.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/assignment_5" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/assignment_5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment_5/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment_2_1.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +54,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Assignment_2_3.html">
+  <component name="RunManager" selected="JavaScript Debug.Assignment_2_1.html">
     <configuration name="Assignment_2_1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/time1/Assignment_2_1.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -52,8 +63,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.Assignment_2_3.html" />
         <item itemvalue="JavaScript Debug.Assignment_2_1.html" />
+        <item itemvalue="JavaScript Debug.Assignment_2_3.html" />
       </list>
     </recent_temporary>
   </component>
@@ -71,6 +82,7 @@
       <workItem from="1567076864982" duration="4432000" />
       <workItem from="1567505768568" duration="2066000" />
       <workItem from="1567671445351" duration="962000" />
+      <workItem from="1571678388093" duration="1659000" />
     </task>
     <servers />
   </component>

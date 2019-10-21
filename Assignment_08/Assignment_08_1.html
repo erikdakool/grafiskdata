@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="addPoint">Add point</button>
+
+<canvas id="myCanvas" width="600" height="600" style="border: 1px solid #d3d3d3;"></canvas>
+
+<script type="text/javascript">
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    const addPointEl = document.getElementById("addPoint");
+
+    var points = [];
+
+    function Point(x,y){
+        this.x = x;
+        this.y = y;
+    }
+
+    points.push(new Point(100,100));
+    points.push(new Point(200,250));
+    points.push(new Point(400,100));
+    points.push(new Point(500,400));
+
+    ctx.beginPath();
+    ctx.moveTo(points[0].x,points[0].y);
+    for(var i = 0; i <points.length; i++){
+        var p = points[i];
+        ctx.lineTo(p.x,p.y);
+        console.log(p.x + " " + p.y);
+    }
+    ctx.stroke();
+
+    const n = 100;
+    function drawBezier(i) {
+        var curvePoints = [];
+        var delta = 1.0/n;
+        var t;
+        for(var j = 0; j<=n;j++){
+            console.log(i)
+            t = j*delta;
+            curvePoints[j] = new Point();
+            curvePoints[j].x = Math.round(
+                points[i-3].x*(1.0-t)*(1.0-t)*(1.0-t)
+                + points[i-2].x*3.0*t*(1.0-t)*(1.0-t)
+                + points[i-1].x*3.0*t*t*(1.0-t)
+                + points[i].x*t*t*t);
+            curvePoints[j].y = Math.round(
+                points[i-3].y*(1.0-t)*(1.0-t)*(1.0-t)
+                + points[i-2].y*3.0*t*(1.0-t)*(1.0-t)
+                + points[i-1].y*3.0*t*t*(1.0-t)
+                + points[i].y*t*t*t);
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(curvePoints[0].x,curvePoints[0].y);
+        for(var i = 0; i <curvePoints.length; i++){
+            var p = curvePoints[i];
+            ctx.lineTo(p.x,p.y);
+            console.log(p.x + " " + p.y);
+        }
+        ctx.stroke();
+    }
+    drawBezier(3)
+    //addPointEl.addEventListener('click');
+</script>
+</body>
+</body>
+</html>

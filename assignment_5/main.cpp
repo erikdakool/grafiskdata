@@ -89,16 +89,16 @@ int main()
                     float dx;
                     float dy;
                     if(state == Rotate) {
-                        float a = sqrtf((mouseLast.x-600)^2 + (mouseLast.y-500)^2);
-                        float b = sqrt((pos.x-600)^2 + (pos.y-500)^2);
 
-                        float dr = acos(b/a);
-                        std::cout << dr << " " << a << " " << b<< endl;
-                        gameObject->Rotate(dr);
-			if(rotateClick == false){
-				gameObject->Rotate(5*180/3.14);
-				rotateClick = true;
-			}
+                        //float a = sqrtf((mouseLast.x-600)^2 + (mouseLast.y-500)^2);
+                        //float b = sqrt((pos.x-600)^2 + (pos.y-500)^2);
+                        //float dr = acos(b/a);
+                        //std::cout << dr << " " << a << " " << b<< endl;
+                        //gameObject->Rotate(dr);
+			            if(rotateClick == false){
+				            gameObject->Rotate(30*3.14/180);
+				            rotateClick = true;
+			            }
                     }else if (state == Translate){
                         dx = (float)pos.x-mouseLast.x ;
                         dy = (float)pos.y- mouseLast.y;
@@ -114,7 +114,6 @@ int main()
             }else if(pos.y < 200 && pos.x < 800){
                 if(pos.x > 600){
                     state = Rotate;
-                    gameObject->Rotate(5*180/3.14);
                     info.setString( "::Rotate" );
                 }else if(pos.x > 400){
                     state = Scale;
@@ -133,7 +132,7 @@ int main()
         } else{
             mouseLast.x = -1;
             mouseLast.y = -1;
-	    rotateClick = false;
+	        rotateClick = false;
         }
 	
 
