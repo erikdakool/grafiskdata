@@ -5,16 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-<button id="addPoint">Add point</button>
-
 <canvas id="myCanvas" width="600" height="600" style="border: 1px solid #d3d3d3;"></canvas>
 
+<button id="addPoint">Add point</button>
+
 <script type="text/javascript">
+    const StateEnum = {"addPoint":1}
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
 
     const addPointEl = document.getElementById("addPoint");
-
+    let state = StateEnum.addPoint;
     var points = [];
 
     function Point(x,y){
@@ -27,22 +28,12 @@
     points.push(new Point(400,100));
     points.push(new Point(500,400));
 
-    ctx.beginPath();
-    ctx.moveTo(points[0].x,points[0].y);
-    for(var i = 0; i <points.length; i++){
-        var p = points[i];
-        ctx.lineTo(p.x,p.y);
-        console.log(p.x + " " + p.y);
-    }
-    ctx.stroke();
-
     const n = 100;
     function drawBezier(i) {
         var curvePoints = [];
         var delta = 1.0/n;
         var t;
         for(var j = 0; j<=n;j++){
-            console.log(i)
             t = j*delta;
             curvePoints[j] = new Point();
             curvePoints[j].x = Math.round(
@@ -66,8 +57,33 @@
         }
         ctx.stroke();
     }
+
+    function draw() {
+        ctx.clearRect(0,0,600,600);
+        ctx.beginPath();
+        ctx.moveTo(points[0].x,points[0].y);
+        for(var i = 0; i <points.length; i++){
+            var p = points[i];
+            ctx.lineTo(p.x,p.y);
+            console.log(p.x + " " + p.y);
+        }
+        ctx.stroke();
+        for(var j = 3; j<points.length;j++){
+            drawBezier(j)
+        }
+    }
+
+    function addPoint(event){
+        var x = event.clientX - c.offsetLeft;
+        var y = event.clientY - c.offsetTop;
+        points.push(new Point(x,y))
+        draw();
+    }
+
+    draw();
     drawBezier(3)
     //addPointEl.addEventListener('click');
+    c.addEventListener("click",addPoint);
 </script>
 </body>
 </body>

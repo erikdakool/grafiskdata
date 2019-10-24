@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df6a4fda-a78d-4ac8-ba00-d3db21a83bb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Assignment_08/.idea/Assignment_08.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/assignment_5.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/assignment_5" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/cmake-build-debug/assignment_5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assignment_5/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment_5/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment_08/Assignment_08_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_08/Assignment_08_1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +27,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Assignment_08" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
@@ -83,6 +71,8 @@
       <workItem from="1567505768568" duration="2066000" />
       <workItem from="1567671445351" duration="962000" />
       <workItem from="1571678388093" duration="1659000" />
+      <workItem from="1571743378288" duration="32000" />
+      <workItem from="1571745604942" duration="244000" />
     </task>
     <servers />
   </component>
